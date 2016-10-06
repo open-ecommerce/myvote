@@ -255,8 +255,8 @@ class Evote {
 
             $sql4 = "UPDATE elections_codes SET active=(SELECT MAX(id) FROM elections) WHERE id=$id";
             $conn->multi_query($sql4);
-            echo $conn->error;
-            echo $p;
+            //echo $conn->error;
+            //echo $p;
             return TRUE;
         }else{
             return FALSE;

@@ -1,10 +1,8 @@
 <?php
 
-
 require '../data/evote.php';
 require '../data/Dialogue.php';
 $evote = new Evote();
-
 session_start();
 if (isset($_POST['button'])) {
     if ($_POST['button'] == 'vote') {
