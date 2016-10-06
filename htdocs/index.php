@@ -29,18 +29,44 @@ $evote = new Evote();
 $tg = new TableGenerator();
 $mg = new MenuGenerator();
 $randomString = new RandomInfo();
+
+if(isset($_SESSION['message']) && is_string($_SESSION['message']) && $_SESSION['message'] != ''){
+    $d = unserialize($_SESSION['message']);
+    $d->printAlerts();
+    unset($_SESSION['message']);
+}
+
+
+$page = trim($_SERVER['REQUEST_URI'], '/');
+$tr = trim($_SERVER['REQUEST_URI'], '/');
+$nav = explode('/',$tr);
+
+$module = '';
+$page = '';
+if(isset($nav[0])){
+    $module = $nav[0];
+}
+if(isset($nav[1])){
+    $page = $nav[1];
+}
+
+
+
 ?>
+
+
+
     <!-- Header -->
     <div class="fixed-header">
         <div class ="row">
-            <div class="col-md-4">
+            <div class="col-md-12">
                 <div class="logo">
-                    <!--<div><h3><span class="label label-info">E-vote - Ditt digitala röstsystem</span></h3></div> -->
-					<img src="/logo.jpg" />
+					<img src="/tango-vote-logo.png" />
                 </div>
             </div>
         </div>
 
+<?php if($module != 'vote' && $module != ''): ?>
 
         <div class="navbar navbar-inverse navbar-default" role="navigation">
             <div class="container-fluid">
@@ -111,30 +137,22 @@ $randomString = new RandomInfo();
         </div>
     </div>
 
+
     <!-- Main content -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <?php else: ?>
+        <!-- Main content for voting -->
+        <div class="col-md-12 voting">
+    <?php endif; ?>
+
+
+
+
+
 <?php
 
 
-    if(isset($_SESSION['message']) && is_string($_SESSION['message']) && $_SESSION['message'] != ''){
-        $d = unserialize($_SESSION['message']);
-        $d->printAlerts();
-        unset($_SESSION['message']);
-    }
-
-
-    $page = trim($_SERVER['REQUEST_URI'], '/');
-    $tr = trim($_SERVER['REQUEST_URI'], '/');
-    $nav = explode('/',$tr);
-
-    $module = '';
-    $page = '';
-    if(isset($nav[0])){
-        $module = $nav[0];
-    }
-    if(isset($nav[1])){
-        $page = $nav[1];
-    }
     $configured = file_exists($_SERVER['DOCUMENT_ROOT'].'/data/config.php');
     if(!$configured){
         echo '<h4>E-vote måste konfigureras</h4>';

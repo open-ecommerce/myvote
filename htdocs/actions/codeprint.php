@@ -15,7 +15,7 @@ if($evote->verifyUser($_SESSION["user"], 0)){
 	foreach($codes as $c){
 		$count ++;
 		$pdf->SetFont('Courier','B',16);
-		$title = decode_str("E-vote, E-sektionens röstningssystem ".$_SERVER['SERVER_NAME']);
+		$title = decode_str("UK Tango Festival & Championship 2017");
 		$pdf->Ln();
 		$pdf->Cell(190,10,$title);
 		$pdf->Ln();
@@ -23,7 +23,7 @@ if($evote->verifyUser($_SESSION["user"], 0)){
 		$pdf->Multicell(190, 4, $instructions);
 		$pdf->SetFont('Arial','',12);
 		$pdf->Ln();
-		$pdf->Multicell(190,10,decode_str("Din personliga kod är"), 0, 'C', false);
+		$pdf->Multicell(190,10,decode_str("Your secret vote code is:"), 0, 'C', false);
 		$pdf->SetFont('Times','B',16);
 		$pdf->SetFillColor(215, 215, 215);
 		$pdf->Multicell(190,10,$c, 0, 'C', true);
@@ -34,6 +34,6 @@ if($evote->verifyUser($_SESSION["user"], 0)){
 	}
 	$pdf->Output();
 }else{
-	echo "Fy! Så får du inte göra.";
+	echo "ni idea que es esto";
 }
 ?>

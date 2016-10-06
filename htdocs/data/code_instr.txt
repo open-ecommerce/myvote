@@ -1,11 +1,7 @@
-At today's meeting, the electronic voting system E-voting will be used.
-This used to be voting in closed voting.
-You as a section member to vote in all elections with the help of your phone, tablet, computer, or other device that can reach the Internet.
+the system is very simple. When the President announces visit myvote.ml to give your vote.
 
-For those voters, the system is very simple.
-When the President announces a choice visit the URL given above. Here,
-first select the option you want to vote for. Then, enter your personal code which is given below,
-as well as the temporary code that the President informed of the actual election. When you press the vote
-is your voice registered, and your code spent for the actual election.
+  1- Select the option you want to vote for.
 
-Keep track of your personal code during the evening and not share it with anyone else. Your personal code is only valid for one vote per valtillfälle. If you were to leave the meeting, it is very important that you also submit your code.
+  2- Enter your personal code which is given below,
+
+  3- Click or touch the vote button.
