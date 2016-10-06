@@ -78,7 +78,7 @@ if(isset($_POST["button"])){
 
 		if($_POST["code1"] == ""){
 			$ok = FALSE;
-			$msg .= "Du har inte angett någon personlig valkod. ";
+			$msg .= "You need to enter your secret voting code. ";
 			$msgType = "error";
 		}
 		if($_POST["code2"] == ""){

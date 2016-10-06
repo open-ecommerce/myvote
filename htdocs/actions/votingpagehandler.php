@@ -24,7 +24,7 @@ if (isset($_POST['button'])) {
 
         if ($_POST['code1'] == '') {
             $ok = false;
-            $dialogue->appendMessage('Du har inte angett någon personlig valkod', 'error');
+            $dialogue->appendMessage('You need to enter your secret voting code', 'error');
         }
         if ($_POST['code2'] == '') {
             $ok = false;
