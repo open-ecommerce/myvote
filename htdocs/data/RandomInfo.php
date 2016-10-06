@@ -9,14 +9,14 @@ class RandomInfo {
     //Generea text i popup-rutorna
     public function generateTip($type){
         $suc_info = array(
-            "Fantastic !!!",
-            "You got it",
-            "Sweet!!"
+            "Fantastic: ",
+            "Thanks: ",
+            "Sweet: "
         );
         $err_info = array(
-            "Something went wrong.",
-            "Sorry some problems here",
-            "Calling earth"
+            "Something went wrong: ",
+            "Sorry some problems here: ",
+            "Oh Oh: "
         );
 
         $msg = "";
