@@ -27,7 +27,7 @@ if(in_array($priv, $access)){
                         switch($row["privilege"]){
                             case "0": $priv = "administrator";
                                 break;
-                            case "1": $priv = "Valansvarig";
+                            case "1": $priv = "Elecciones";
                                 break;
                             case "2": $priv = "Justerare";
                                 break;

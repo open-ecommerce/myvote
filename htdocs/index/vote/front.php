@@ -12,7 +12,7 @@ if(!$evote->ongoingSession()){
             if($res->num_rows > 0){
 ?>
 			<hr>
-			<div class="well small-centered"style="max-width: 400px;">
+			<div class="well small-centered"">
 				<?php
 				$max = $evote->getMaxAlternatives();
 				echo "<div name=\"maxalt_header\" >";
@@ -73,7 +73,7 @@ if(!$evote->ongoingSession()){
 	    	            <input type="password" class="form-control" name="code1">
 	    	        </div>
 	    	        <div class="form-group">
-	    	            <input type="hidden" class="form-control" name="code2" value="666">
+	    	            <input type="hidden" class="form-control" name="code2" value="1234">
 	    	        </div>
                             <br>
                             <div class="span7 text-center">

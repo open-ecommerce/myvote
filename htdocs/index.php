@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>E-vote - Ditt digitala röstsystem</title>
+    <title>AIR EUROPA TANGO CHAMPIONS 2017</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,18 +53,8 @@ if(isset($nav[1])){
 
 
 ?>
-
-
-
     <!-- Header -->
     <div class="fixed-header">
-        <div class ="row">
-            <div class="col-md-12">
-                <div class="logo">
-					<img src="/tango-vote-logo.png" />
-                </div>
-            </div>
-        </div>
 
 <?php if($module != 'vote' && $module != ''): ?>
 
@@ -92,7 +82,7 @@ if(isset($nav[1])){
                             </a>
                             <ul class="dropdown-menu">
                                 <li>Insert link here</li>
-                                <li>Logga ut</li>
+                                <li>Logout</li>
                             </ul>
                         </li>
                     </ul>-->
@@ -117,14 +107,14 @@ if(isset($nav[1])){
                     } else {
                         $priv = $evote->getPrivilege($_SESSION['user']);
                         if ($priv == 1) {
-                            echo '<li><a href="/electionadmin">Valansvarig</a></li>';
+                            echo '<li><a href="/electionadmin">Elecciones</a></li>';
                         } elseif ($priv == 2) {
                             echo '<li><a href="/adjust">Justerare</a></li>';
                         } elseif ($priv == 0) {
                             echo '<li><a href="/useradmin">Manage Users</a></li>';
                             echo '<li><a href="/adminmain">administrator</a></li>';
                         }
-                        echo '<li><a href="/logout">Logga ut</a></li>';
+                        echo '<li><a href="/logout">Logout</a></li>';
                     }
                     #echo "<li class=\"nav-header disabled\"><a><hr class=sidebarruler></a></li>";
                 }
@@ -144,15 +134,18 @@ if(isset($nav[1])){
     <?php else: ?>
         </div>
         <!-- Main content for voting -->
-        <div class="col-md-12 voting">
+        <div class="col-lg-12 voting centered">
+            <div class ="row">
+                <div class="col-lg-12">
+                    <div class="logo">
+    					<img id="logo-header" src="/tango-vote-logo.png" />
+                    </div>
+                </div>
+            </div>
     <?php endif; ?>
 
 
-
-
-
 <?php
-
 
     $configured = file_exists($_SERVER['DOCUMENT_ROOT'].'/data/config.php');
     if(!$configured){

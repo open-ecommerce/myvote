@@ -12,7 +12,7 @@ if(in_array($priv, $access)){
             break;
     }
 
-    echo "<h3>Tidigare valomgångar</h3>";
+    echo "<h3>Previous Rounds</h3>";
     echo "<hr>";
     $tg->generateResultTable("all");
 } else{

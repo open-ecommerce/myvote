@@ -6,7 +6,7 @@ if($evote->verifyUser($_SESSION["user"], 1) || $evote->verifyUser($_SESSION["use
     if ($res->num_rows > 0) {
 ?>
 
-    <h3>Föregående valomgång</h3>
+    <h3></h3>
     <div style="max-width: 400px">
 		<?php
 		echo "<table class=\"table\">";
@@ -50,9 +50,9 @@ if($evote->verifyUser($_SESSION["user"], 1) || $evote->verifyUser($_SESSION["use
 		</div>
 <?php
     }else if($evote->countRounds() == 0){
-        echo "Ingenting har valts ännu.";
+        echo "Nothing selected yet.";
     }else{
-        echo "Var vänlig vänta. Röstning pågår.";
+        echo "Var vänlig vänta. .";
     }
 }
 ?>

@@ -193,6 +193,7 @@
   padding: 20px;
 }
 
+
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
@@ -221,3 +222,16 @@
         margin: 0 auto;
     }
 }
+
+.well.small-centered {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 400px;
+}
+
+.col-lg-12.voting.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.alert-danger {margin-top: 2px;}

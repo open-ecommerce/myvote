@@ -15,7 +15,7 @@ if(in_array($evote->getPrivilege($_SESSION["user"]), $access)){
         <label for="psw1">Ditt Password:</label>
         <input type="password" name="pswuser" class="form-control" id="psw1">
 	</div>
-	<button type="submit" class="btn btn-primary" value="delete_election" name="button">Radera val</button>
+	<button type="submit" class="btn btn-primary" value="delete_election" name="button">Delete Election</button>
 	</form>
 	</div>
 

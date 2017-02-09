@@ -14,9 +14,7 @@ class RandomInfo {
             "Sweet: "
         );
         $err_info = array(
-            "Something went wrong: ",
-            "Sorry some problems here: ",
-            "Oh Oh: "
+            "Error voting: ",
         );
 
         $msg = "";

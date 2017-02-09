@@ -20,12 +20,12 @@ if($evote->checkCheating()){
 if(!$ongoingSession){ ?>
 	<h4>Det pågår inget valtillfälle.</h4>
 <!--
-	<h3>Skapa nytt val</h3>
+	<h3>Create new election</h3>
 	<hr>
 	<div style="max-width: 400px">
 	<form action="actions/electionadminpagehandler.php" method="POST">
 	<div class="form-group">
-	        <label for="vn">Name på val:</label>
+	        <label for="vn">Create new election:</label>
 	        <input type="text" name="valnamn" class="form-control" id="vn" autocomplete="off">
 	</div>
 	<div class="form-group" style="max-width: 150px">
@@ -41,21 +41,21 @@ if(!$ongoingSession){ ?>
 	# ---------------NY VALOMGÅNG OCH VISA FÖRRA VALOMGÅNGEN --------------
 	if(!$ongoing){?>
 
-	    <h3>Skapa ny valomgång</h3>
+	    <h3>Create new election</h3>
 		<hr>
 		<div class="well" style="max-width: 400px">
 		<div class=\"panel panel-default">
 	        <form action="/actions/electionadminpagehandler.php" method="POST">
 	        <div class="form-group">
-	                <label>Vad som ska väljas:</label>
+	                <label>What to choose:</label>
 	                <input type="text" class="form-control" name="round_name" autocomplete="off" maxlength="240">
 			</div>
 	        <div class="form-group">
-	                <label>Tillfällig kod:</label>
+	                <label>Temporary Code:</label>
 	                <input type="text" class="form-control" name="code" autocomplete="off" maxlength="240"/>
 	        </div>
 			<div class="form-group" style="max-width: 200px">
-	                <label>Antal valbara alternativ:</label>
+	                <label>Number of options:</label>
 	                <input type="number" class="form-control" name="max_num" id="max" autocomplete="off" value="1" min="1"/>
 	        </div>
 
@@ -69,8 +69,8 @@ if(!$ongoingSession){ ?>
 		}
 ?> -->
                 <br>
-                <div><h4><b>Alternativ:</b></h4></div>
-                <div class="form-group">Öka/minska antalet fält:
+                <div><h4><b>Alternatives:</b></h4></div>
+                <div class="form-group">Number of fields:
                     <div class="btn-group">
                     <button type="button" class="btn btn-default" id="remove_button" onclick="removeField()">-</button>
                     <button type="button" class="btn btn-default" id="add_button" onclick="addField()">+</button>
@@ -107,7 +107,7 @@ if(!$ongoingSession){ ?>
                     }
                 </script>
 
-	        <button type="submit" class="btn btn-primary" value="begin_round" name="button">Starta ny valomgång</button>
+	        <button type="submit" class="btn btn-primary" value="begin_round" name="button">Create Election</button>
 	        </form>
 	        </div>
 		</div>
@@ -116,13 +116,13 @@ if(!$ongoingSession){ ?>
 		<?php
 
 		// Generera tabell med förra omgångens resultat.
-		echo "<h3>Föregående valomgång</h3>";
+		echo "<h3></h3>";
 		echo "<hr>";
 		$tg->generateResultTable("last");
 
 	# ------------- VALOMGÅNG PÅGÅR ----------------
 	}else{
-		echo "<h3>Röstning pågår</h3>";
+		echo "<h3></h3>";
 		echo "<hr>";
 		echo "<div class=\"well well-sm\" style=\"max-width: 400px\">";
         echo "<div class=\"panel panel-default\">";
@@ -132,7 +132,7 @@ if(!$ongoingSession){ ?>
 		echo "</div>";
 		echo "<div class=\"span7 text-center\">";
 		echo "<form action=/actions/electionadminpagehandler.php method=\"POST\">";
-		echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"button\" value=\"end_round\">Avsluta valomgång</button>";
+		echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"button\" value=\"end_round\">End Election</button>";
 		echo "</form>";
 		echo "</div>";
 		echo "</div>";

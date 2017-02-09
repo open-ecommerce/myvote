@@ -16,7 +16,7 @@ class MenuGenerator {
         echo "<ul class=\"nav nav-tabs\">";
             echo "<li class=\"$activate[0]\"><a href=\"/electionadmin/control\">Administrera val</a></li>";
             if($ongoingS){
-                echo "<li class=\"$activate[1]\"><a href=\"/electionadmin/stat\">Se tidigare omgångar</a></li>";
+                echo "<li class=\"$activate[1]\"><a href=\"/electionadmin/stat\">See previous elections</a></li>";
                 //echo "<li class=\"$activate[2]\"><a href=\"/clear\">Close current election</a></li>";
             }
 

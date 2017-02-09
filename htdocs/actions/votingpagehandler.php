@@ -11,11 +11,11 @@ if (isset($_POST['button'])) {
         $ongoingR = $evote->ongoingRound();
         if (!isset($_POST['person'])) {
             $ok = false;
-            $dialogue->appendMessage('Du har inte valt någon att rösta på', 'error');
+            $dialogue->appendMessage('You need to select an option', 'error');
         } elseif (!$evote->checkRightElection($_POST['person'])) {
             // om någon har en gammal sida uppe och försöker rösta
             $ok = false;
-            $dialogue->appendMessage('Den valomgång du försöker rösta på har redan avslutats. Sidan har nu uppdaterats så du kan försöka igen', 'error');
+            $dialogue->appendMessage('Please try again', 'error');
         } elseif ($evote->getMaxAlternatives() < count($_POST['person'])) {
             // om någon stänger av javascriptet.
             $ok = false;
@@ -39,10 +39,11 @@ if (isset($_POST['button'])) {
             $person_id = $_POST['person'];
             $personal_code = $_POST['code1'];
             $current_code = $_POST['code2'];
+
             if ($evote->vote($person_id, $personal_code, $current_code)) {
-                $dialogue->appendMessage('Din röst har blivit registrerad', 'success');
+                $dialogue->appendMessage('Your vote has being registered', 'success');
             } else {
-                $dialogue->appendMessage('Din röst blev inte registrerad. Detta kan bero på att du skrev in någon av koderna fel eller att du redan röstat', 'error');
+                $dialogue->appendMessage('Your vote was not registered. This could be because you entered any of the codes wrong or that you have already voted', 'error');
             }
         }
 

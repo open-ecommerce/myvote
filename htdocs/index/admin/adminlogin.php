@@ -1,4 +1,4 @@
-<h3>Logga in som administrator</h3>
+<h3>Login som administrator</h3>
 <hr>
 <div style="max-width: 400px">
 <form action="actions/usersessionhandler.php" method="POST">
@@ -10,6 +10,6 @@
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" name="psw">
 </div>
-<button type="submit" class="btn btn-primary" name="button" value="login" name="login">Logga in</button>
+<button type="submit" class="btn btn-primary" name="button" value="login" name="login">Login</button>
 </form>
 </div>

@@ -62,7 +62,7 @@ if(isset($_POST["button"])){
 		$ongoingR = $evote->ongoingRound();
 		if(!isset($_POST["person"])){
 			$ok = FALSE;
-			$msg .= "Du har inte valt någon att rösta på. ";
+			$msg .= "D. ";
 			$msgType = "error";
 		}else if(!$evote->checkRightElection($_POST["person"])){
 			// om någon har en gammal sida uppe och försöker rösta
@@ -97,23 +97,23 @@ if(isset($_POST["button"])){
 			$personal_code = $_POST["code1"];
 			$current_code = $_POST["code2"];
             if($evote->vote($person_id, $personal_code, $current_code)){
-			    $msg .= "Din röst har blivit registrerad.";
+			    $msg .= "Your vote has being registered.";
                 $msgType = "success";
             }else{
-			    $msg .= "Din röst blev inte registrerad. Detta kan bero på att du skrev in någon av koderna fel eller att du redan röstat.";
+			    $msg .= "Your vote was not registered. This could be because you entered any of the codes wrong or that you have already voted.";
                 $msgType = "error";
             }
 		}
 		$_SESSION["message"] = array("type" => $msgType, "message" => $msg);
 		header("Location: /front");
 
-	}else if($_POST["button"]=="create"){ # SKAPA NYTT VAL
+	}else if($_POST["button"]=="create"){ # Create new election
 		$input_ok = TRUE;
 		$msg = "";
 		$msgType = "";
 		if($_POST["valnamn"] == ""){
 			$input_ok = FALSE;
-			$msg .= "Du har inte angett något Name på valet. ";
+			$msg .= "Du har inte angett något Create new electionet. ";
 			$msgType = "error";
 		}
 		if($_POST["antal_personer"] == ""){
@@ -148,12 +148,12 @@ if(isset($_POST["button"])){
 		$msgType = "";
 		if($_POST["round_name"] == "" ){
 			$input_ok = FALSE;
-			$msg .= "Du har inte angett vad som ska väljas. ";
+			$msg .= "Du har inte angett What to choose. ";
 			$msgType = "error";
 		}
 		if($_POST["code"] == ""){
 			$input_ok = FALSE;
-			$msg .= "Du har inte angett någon tillfällig kod. ";
+			$msg .= "Du har inte angett någon Temporary Code. ";
 			$msgType = "error";
 		}
 		if($_POST["max_num"] == ""){
@@ -203,7 +203,7 @@ if(isset($_POST["button"])){
                 //header("HTTP/1.1 301 Moved Permanently");
 		header("Location: /admin");
 
-	}else if($_POST["button"]=="end_round"){ # AVSLUTA VALOMGÅNG KNAPPEN
+	}else if($_POST["button"]=="end_round"){ # End Election KNAPPEN
                 $evote->endRound();
 		header("Location: /admin");
 

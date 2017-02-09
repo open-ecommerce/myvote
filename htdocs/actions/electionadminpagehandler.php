@@ -6,14 +6,14 @@ require '../data/Dialogue.php';
 $evote = new Evote();
 
 if (isset($_POST['button'])) {
-    if ($_POST['button'] == 'create') { # SKAPA NYTT VAL
+    if ($_POST['button'] == 'create') { # Create new election
         $dialogue = new Dialogue();
         $input_ok = true;
         $msg = '';
         $msgType = '';
         if ($_POST['valnamn'] == '') {
             $input_ok = false;
-            $dialogue->appendMessage('Du har inte angett något Name på valet', 'error');
+            $dialogue->appendMessage('Du har inte angett något Create new electionet', 'error');
         }
         if ($_POST['antal_personer'] == '') {
             $input_ok = false;
@@ -44,11 +44,11 @@ if (isset($_POST['button'])) {
         $input_ok = true;
         if ($_POST['round_name'] == '') {
             $input_ok = false;
-            $dialogue->appendMessage('Du har inte angett vad som ska väljas', 'error');
+            $dialogue->appendMessage('Du har inte angett What to choose', 'error');
         }
         if ($_POST['code'] == '') {
             $input_ok = false;
-            $dialogue->appendMessage('Du har inte angett någon tillfällig kod', 'error');
+            $dialogue->appendMessage('Du har inte angett någon Temporary Code', 'error');
         }
         if ($_POST['max_num'] == '') {
             $input_ok = false;
@@ -88,7 +88,7 @@ if (isset($_POST['button'])) {
         $_SESSION['message'] = serialize($dialogue);
                 //header("HTTP/1.1 301 Moved Permanently");
         header('Location: /electionadmin');
-    } elseif ($_POST['button'] == 'end_round') { # AVSLUTA VALOMGÅNG KNAPPEN
+    } elseif ($_POST['button'] == 'end_round') { # End Election KNAPPEN
                 $evote->endRound();
         header('Location: /electionadmin');
 
