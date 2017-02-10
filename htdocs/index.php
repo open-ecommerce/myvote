@@ -135,13 +135,6 @@ if(isset($nav[1])){
         </div>
         <!-- Main content for voting -->
         <div class="col-lg-12 voting centered">
-            <div class ="row">
-                <div class="col-lg-12">
-                    <div class="logo">
-    					<img id="logo-header" src="/tango-vote-logo.png" />
-                    </div>
-                </div>
-            </div>
     <?php endif; ?>
 
 
