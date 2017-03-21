@@ -1,3 +1,14 @@
+div#notyet {
+    color: #000;
+    padding: 10px;
+    font-size: 1.3em;
+    background-color: #fff;
+}
+
+.row-name {
+    font-size: 0.9em;
+}
+
 /* Sidebar */
 .sidebar {
   background-color: #222222;
@@ -266,14 +277,5 @@ div#vote-info {
     margin: 5px 0 10px 0;
 }
 
-div#notyet {
-    color: #000;
-    padding: 10px;
-    font-size: 1.3em;
-    background-color: #fff;
-}
 
-.row-name {
-    font-size: 0.9em;
-}
 
