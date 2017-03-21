@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/evote.css" rel="stylesheet">
+    <link href="css/evote.css?version=2" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
