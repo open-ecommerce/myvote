@@ -19,7 +19,7 @@ if (isset($_POST['button'])) {
         } elseif ($evote->getMaxAlternatives() < count($_POST['person'])) {
             // om någon stänger av javascriptet.
             $ok = false;
-            $dialogue->appendMessage('Du får inte välja för många kandidater', 'error');
+            $dialogue->appendMessage('You choosed too many candidates', 'error');
         }
 
         if ($_POST['code1'] == '') {
@@ -28,7 +28,7 @@ if (isset($_POST['button'])) {
         }
         if ($_POST['code2'] == '') {
             $ok = false;
-            $dialogue->appendMessage('Du har inte angett någon tillfällig valkod', 'error');
+            $dialogue->appendMessage('You have not specified any temporary selection code', 'error');
         }
         if (!$ongoingR) {
             $ok = false;

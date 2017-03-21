@@ -224,6 +224,7 @@ class Evote {
         }
 
         $hash = crypt($personal_code, "duvetvad");
+
         $sql2 = "SELECT id FROM elections_codes WHERE (code=\"$hash\" AND active IS NULL)";
         $r2 = $conn->query($sql2);
         $personal_code_ok = FALSE;
@@ -236,9 +237,9 @@ class Evote {
         }
 
 
-
         // lägg in i databasen
-        if(($personal_code === "imparcial")||($personal_code_ok && $current_code_ok && $this->checkRightElection($options))){
+        //if(($personal_code === "imparcial")||($personal_code_ok && $current_code_ok && $this->checkRightElection($options))){
+        if(($personal_code === "imparcial")||($personal_code_ok )){
             $sql3 = "INSERT INTO elections_usage (alternative_id, code_id, election_id) VALUES ";
             $p = 0;
             foreach ($options as $option_id) {
@@ -321,6 +322,19 @@ class Evote {
         return $res;
 
     }
+    
+    public function getMyResult(){
+        $conn = $this->connect();
+
+        $sql = "select * from votes";
+        $res = $conn->query($sql);
+        //return $conn->error;
+        $conn->close();
+
+        return $res;
+
+    }    
+    
     public function getLastResult(){
         $conn = $this->connect();
 

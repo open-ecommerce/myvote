@@ -4,8 +4,7 @@
 
 <head>
     <title>AIR EUROPA TANGO CHAMPIONS 2017</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -16,6 +15,7 @@
 
 <body>
 <?php
+header('Content-Type: text/html; charset=utf-8');
 session_start();
 
 include $_SERVER['DOCUMENT_ROOT'].'/data/evote.php';
