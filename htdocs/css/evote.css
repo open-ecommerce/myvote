@@ -272,7 +272,8 @@ div#notyet {
     font-size: 1.3em;
     background-color: #fff;
 }
-td.row-name {
+
+.row-name {
     font-size: 0.9em;
 }
 
