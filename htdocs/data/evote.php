@@ -298,7 +298,8 @@ class Evote {
         $conn = $this->connect();
         $sql = "SELECT elections_alternatives.id AS id, elections_alternatives.name AS name, elections.name AS e_name FROM elections_alternatives
             LEFT JOIN elections ON (elections_alternatives.election_id = elections.id)
-            WHERE (elections.active = 1)";
+            WHERE (elections.active = 1)
+            ORDER BY name";
         $res = $conn->query($sql);
         echo $conn->error;
         $conn->close();
