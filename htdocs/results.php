@@ -19,8 +19,8 @@ require 'data/Dialogue.php';
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
         <!-- Bootstrap core CSS -->
-        <link href="/css/bootstrap.css" rel="stylesheet">
-        <link href="/css/evote.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/evote.css" rel="stylesheet">
     </head>
 
     <body>
@@ -39,11 +39,11 @@ require 'data/Dialogue.php';
                             <tr class="rowheader";>
                                 <th colspan="2">Best Dancers voted by the public</th>
                             </tr>
-<?php
-$evote = new Evote();
-$tg = new TableGenerator();
-$tg->generateMyResultTable();
-?>
+                            <?php
+                            $evote = new Evote();
+                            $tg = new TableGenerator();
+                            $tg->generateMyResultTable();
+                            ?>
 
                         </table>
                     </div>
