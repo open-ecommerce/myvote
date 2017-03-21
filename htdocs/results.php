@@ -20,7 +20,7 @@ require 'data/Dialogue.php';
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/evote.css" rel="stylesheet">
+        <link href="css/evote.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
