@@ -103,6 +103,19 @@ class Evote {
 
     }
 
+
+    public function getMyTotalVotes(){
+        $conn = $this->connect();
+        $sql =  "select sum(votes) as total from votes";
+        $r = $conn->query($sql);
+        $count = 0;
+        while($row = $r->fetch_array()){
+            $count = $row[0];
+        }
+        $conn->close();
+        return $count;
+    }
+
     public function getAllSessions(){
         $conn = $this->connect();
         $sql = "SELECT * FROM sessions ORDER BY id DESC;";
@@ -323,7 +336,7 @@ class Evote {
         return $res;
 
     }
-    
+
     public function getMyResult(){
         $conn = $this->connect();
 
@@ -334,8 +347,8 @@ class Evote {
 
         return $res;
 
-    }    
-    
+    }
+
     public function getLastResult(){
         $conn = $this->connect();
 

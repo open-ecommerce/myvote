@@ -1,13 +1,4 @@
 
-
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . '/data/evote.php';
-require 'index/classes/TableGenerator.php';
-require 'index/classes/MenuGenerator.php';
-require 'data/RandomInfo.php';
-require 'data/Dialogue.php';
-?>
-
 <!DOCTYPE HTML>
 
 <html>
@@ -20,7 +11,7 @@ require 'data/Dialogue.php';
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/evote.css?version=3" rel="stylesheet" type="text/css"/>
+        <link href="css/evote.css?version=2" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
@@ -37,14 +28,8 @@ require 'data/Dialogue.php';
                     <div class="panel panel-default">
                         <table class="table table" id="contentTable">
                             <tr class="rowheader";>
-                                <th colspan="2" id="header-results">Best Dancers voted by the public</th>
+                                <th colspan="2"><div id='notyet'><h3>The public vote is not open yet</h3>Please return to this page when is announced by the presenter.</div></th>
                             </tr>
-                            <?php
-                            $evote = new Evote();
-                            $tg = new TableGenerator();
-                            $tg->generateMyResultTablePorc();
-                            ?>
-
                         </table>
                     </div>
             </div>

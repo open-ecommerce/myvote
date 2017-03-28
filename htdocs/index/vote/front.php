@@ -13,7 +13,7 @@ if (!$evote->ongoingSession()) {
             <div class="well small-centered"">
 
                 <div class="logo">
-                    <img id="logo-header" src="/tango-vote-logo.png" />
+                    <img id="logo-header" src="/tango-vote-logo.jpg" />
                 </div>
 
                 <?php

@@ -138,6 +138,39 @@ class TableGenerator {
         }
     }
 
+
+    public function generateMyResultTablePorc() {
+        $evote = new Evote();
+        $res = "";
+        $res = $evote->getMyResult();
+
+        $precent = "- ";
+        $tot = $evote->getMyTotalVotes();
+
+        if ($res->num_rows > 0) {
+            $e_id = -1;
+            $p = 1;
+            $last_votes = "";
+            $limit = "";
+
+            echo "<tr>";
+            echo "<th class='results-header'>Competitors</th>";
+            echo "<th class='results-header'>Votes</th>";
+            echo "</tr>";
+            while ($row = $res->fetch_assoc()) {
+                if ($tot != 0) {
+                    $precent = number_format(($row["votes"] / $tot) * 100, 1) . ' %';
+                }
+                echo "<tr>";
+                echo "<td class='row-name'>" . $row['name'] . "</td>";
+                echo "<td>" . $precent . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<h4>Nothing selected yet<h4>";
+        }
+    }
+
     public function generateAvailableOptions() {
         $evote = new Evote();
         $res = $evote->getOptions();

@@ -74,7 +74,7 @@ $_SESSION['message'] = serialize($dialogue);
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/evote.css" rel="stylesheet">
+    <link href="/css/evote.css?version=3" rel="stylesheet">
 </head>
 <body>
     <?php
