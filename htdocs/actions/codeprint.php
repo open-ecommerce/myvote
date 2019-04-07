@@ -19,7 +19,7 @@ if ($evote->verifyUser($_SESSION['user'], 0)) {
     foreach ($codes as $c) {
         ++$count;
         $pdf->SetFont('Arial', 'B', 16);
-        $title = decode_str('AIR EUROPA TANGO CHAMPIONS 2017');
+        $title = decode_str('AIR EUROPA TANGO CHAMPIONS 2019');
         $pdf->Ln();
         $pdf->Cell(190, 6, $title);
         $pdf->Ln();
