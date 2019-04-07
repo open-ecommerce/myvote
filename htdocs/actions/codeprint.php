@@ -28,7 +28,7 @@ if ($evote->verifyUser($_SESSION['user'], 0)) {
         $pdf->Multicell(190, 4, $instructions);
         $pdf->SetFont('Arial', 'B', 12);
         $pdf->SetFillColor(215, 215, 215);
-        $pdf->Multicell(190, 8, decode_str('Your secret vote code to use in myvote.com is: ' . $c), 0, 'C', true);
+        $pdf->Multicell(190, 8, decode_str('Your secret vote code to use in uktango.ml is: ' . $c), 0, 'C', true);
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->SetFillColor(215, 215, 215);
         //$pdf->Multicell(190, 1, "", 0, 'C', true);
